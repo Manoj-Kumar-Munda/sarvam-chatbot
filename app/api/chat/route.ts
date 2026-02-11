@@ -1,3 +1,4 @@
+import { auth } from "@clerk/nextjs/server";
 import {
   createUIMessageStream,
   createUIMessageStreamResponse,
@@ -46,6 +47,12 @@ const toSarvamMessages = (
     });
 
 export async function POST(req: Request) {
+  const { userId } = await auth();
+
+  if (!userId) {
+    return Response.json({ error: "Unauthorized" }, { status: 401 });
+  }
+
   if (!client) {
     return Response.json(
       { error: "Missing SARVAM_API_KEY environment variable." },

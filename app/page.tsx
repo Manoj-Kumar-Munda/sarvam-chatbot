@@ -1,3 +1,4 @@
+import { UserButton } from "@clerk/nextjs";
 import { ChatInterface } from "@/components/chat/chat-interface";
 
 export default function Home() {
@@ -11,6 +12,9 @@ export default function Home() {
         backgroundSize: "100% 100%",
       }}
     >
+      <div className="fixed right-4 top-4 z-50">
+        <UserButton />
+      </div>
       <ChatInterface />
     </div>
   );

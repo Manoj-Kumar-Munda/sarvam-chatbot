@@ -2,7 +2,17 @@ This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-
 
 ## Getting Started
 
-First, run the development server:
+1. Configure environment variables in `.env.local`:
+
+```bash
+SARVAM_API_KEY=your_sarvam_key
+NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY=your_clerk_publishable_key
+CLERK_SECRET_KEY=your_clerk_secret_key
+NEXT_PUBLIC_CLERK_SIGN_IN_URL=/sign-in
+NEXT_PUBLIC_CLERK_SIGN_UP_URL=/sign-up
+```
+
+2. Run the development server:
 
 ```bash
 npm run dev
@@ -14,7 +24,7 @@ pnpm dev
 bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+3. Open [http://localhost:3000](http://localhost:3000) with your browser.
 
 You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
 
